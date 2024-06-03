@@ -1,6 +1,7 @@
 plugins {
     kotlin("jvm") version "2.0.0"
     id("net.minecrell.plugin-yml.bukkit") version "0.6.0"
+    `maven-publish`
 }
 
 group = "ru.snapix"
@@ -18,8 +19,21 @@ dependencies {
 }
 
 bukkit {
-    main = "ru.snapix.plugin_name.Plugin_Name"
+    main = "ru.snapix.snapicoin.SnapiCoin"
     author = "SnapiX"
     website = "https://mcsnapix.ru"
+    description = "Плагин на валюту SnapiCoin"
     depend = listOf("SnapiLibrary")
+    softDepend = listOf("PlaceholderAPI")
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            artifactId = project.name.lowercase()
+            groupId = group.toString()
+
+            from(components["java"])
+        }
+    }
 }

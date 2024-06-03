@@ -1,1 +1,1 @@
-rootProject.name = "Plugin_Name"
+rootProject.name = "SnapiCoin"
