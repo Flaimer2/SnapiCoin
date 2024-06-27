@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") version "2.0.0"
+    kotlin("plugin.serialization") version "2.0.0"
     id("net.minecrell.plugin-yml.bukkit") version "0.6.0"
     `maven-publish`
 }
@@ -11,11 +12,15 @@ repositories {
     mavenLocal()
     mavenCentral()
     maven("https://repo.papermc.io/repository/maven-public/")
+    maven("https://repo.extendedclip.com/content/repositories/placeholderapi/")
 }
 
 dependencies {
     compileOnly("com.destroystokyo.paper:paper-api:1.12.2-R0.1-SNAPSHOT")
-    compileOnly("ru.snapix:snapilibrary:1.2-bukkit")
+    compileOnly("me.clip:placeholderapi:2.11.6")
+    compileOnly("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.0")
+    compileOnly("ru.snapix:snapilibrary-bukkit:1.4.1")
+    compileOnly("ru.snapix:snapibalancer-bukkit:1.3")
 }
 
 bukkit {
